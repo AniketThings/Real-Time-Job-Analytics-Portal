@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Analytics Portal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .dark-mode {
+            background-color: #333;
+            color: white;
+        }
+
+        .container {
+            border: 5px solid #007bff; /* Wide border */
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: purple; /* Purple color for the heading */
+            font-weight: bold; /* Bold text */
+        }
+
+        .button-container {
+            text-align: center; /* Center buttons */
+            margin-bottom: 20px;
+        }
+
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: purple; /* Purple button color */
+            color: white; /* White text */
+            font-weight: bold; /* Bold text */
+        }
+
+        .feedback {
+            display: none;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .logo {
+            display: block;
+            margin: 0 auto 10px; /* Center the logo */
+            width: 50px; /* Adjust logo size */
+            height: auto;
+        }
+
+        /* Dialog box styles */
+        .dialog {
+            display: none;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            border: 2px solid purple;
+            border-radius: 10px;
+            padding: 20px;
+            z-index: 1000;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .dialog-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        .close-dialog {
+            background-color: purple;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            padding: 5px 10px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>
+    
+        Live Dashboard Visualization
+    </h1>
+
+    <div class="button-container">
+        <button id="toggleButton">Switch Tasks</button>
+        <button id="feedbackButton">Feedback</button>
+        <button id="themeToggle">Change Theme</button>
+    </div>
+
+    <div class="container" id="trainingTask">
+        <div class='tableauPlaceholder' id='viz1748356702456' style='position: relative'>
+            <noscript>
+                <a href='#'><img alt='Dashboard 1 ' src='https://via.placeholder.com/600x400' style='border: none' /></a>
+            </noscript>
+            <object class='tableauViz' style='display:none;'>
+                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                <param name='embed_code_version' value='3' />
+                <param name='site_root' value='' />
+                <param name='name' value='Book2_17455843519310/Dashboard1' />
+                <param name='tabs' value='no' />
+                <param name='toolbar' value='yes' />
+                <param name='static_image' value='https://via.placeholder.com/600x400' />
+                <param name='animate_transition' value='yes' />
+                <param name='display_static_image' value='yes' />
+                <param name='display_spinner' value='yes' />
+                <param name='display_overlay' value='yes' />
+                <param name='display_count' value='yes' />
+                <param name='language' value='en-US' />
+                <param name='filter' value='publish=yes' />
+            </object>
+        </div>
+        <script type='text/javascript'>
+            var divElement = document.getElementById('viz1748356702456');
+            var vizElement = divElement.getElementsByTagName('object')[0];
+            if (divElement.offsetWidth > 800) {
+                vizElement.style.width = '100%';
+                vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+            } else if (divElement.offsetWidth > 500) {
+                vizElement.style.width = '100%';
+                vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+            } else {
+                vizElement.style.width = '100%';
+                vizElement.style.height = '2077px';
+            }
+            var scriptElement = document.createElement('script');
+            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+            vizElement.parentNode.insertBefore(scriptElement, vizElement);
+        </script>
+    </div>
+
+    <div class="container" id="finalTask" style="display: none;">
+        <div class='tableauPlaceholder' id='viz1748102858875' style='position: relative'>
+            <noscript>
+                <a href='#'><img alt='Nullclass Project Dashboard ' src='https://via.placeholder.com/600x400' style='border: none' /></a>
+            </noscript>
+            <object class='tableauViz' style='display:none;'>
+                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                <param name='embed_code_version' value='3' />
+                <param name='site_root' value='' />
+                <param name='name' value='nullclassprojetc/NullclassProjectDashboard' />
+                <param name='tabs' value='no' />
+                <param name='toolbar' value='yes' />
+                <param name='static_image' value='https://via.placeholder.com/600x400' />
+                <param name='animate_transition' value='yes' />
+                <param name='display_static_image' value='yes' />
+                <param name='display_spinner' value='yes' />
+                <param name='display_overlay' value='yes' />
+                <param name='display_count' value='yes' />
+                <param name='language' value='en-US' />
+                <param name='filter' value='publish=yes' />
+            </object>
+        </div>
+        <script type='text/javascript'>
+            var divElement = document.getElementById('viz1748102858875');
+            var vizElement = divElement.getElementsByTagName('object')[0];
+            if (divElement.offsetWidth > 800) {
+                vizElement.style.width = '100%';
+                vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+            } else if (divElement.offsetWidth > 500) {
+                vizElement.style.width = '100%';
+                vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+            } else {
+                vizElement.style.width = '100%';
+                vizElement.style.height = '1927px';
+            }
+            var scriptElement = document.createElement('script');
+            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+            vizElement.parentNode.insertBefore(scriptElement, vizElement);
+        </script>
+    </div>
+
+    <div class="dialog-overlay" id="dialogOverlay"></div>
+    <div class="dialog" id="feedbackDialog">
+        <p>Kindly mail your feedback here. Thank you! Email ID: aniketgaud113@gmail.com</p>
+        <button class="close-dialog" id="closeDialog">Close</button>
+    </div>
+
+    <footer>
+        Created by Aniket Gaud 2025
+    </footer>
+
+    <script>
+        let isTrainingVisible = true;
+
+        document.getElementById('toggleButton').onclick = function () {
+            isTrainingVisible = !isTrainingVisible;
+            document.getElementById('trainingTask').style.display = isTrainingVisible ? 'block' : 'none';
+            document.getElementById('finalTask').style.display = isTrainingVisible ? 'none' : 'block';
+            this.innerText = isTrainingVisible ? 'Switch Tasks' : 'Switch Tasks';
+        };
+
+        document.getElementById('feedbackButton').onclick = function () {
+            document.getElementById('dialogOverlay').style.display = 'block';
+            document.getElementById('feedbackDialog').style.display = 'block';
+        };
+
+        document.getElementById('closeDialog').onclick = function () {
+            document.getElementById('dialogOverlay').style.display = 'none';
+            document.getElementById('feedbackDialog').style.display = 'none';
+        };
+
+        document.getElementById('themeToggle').onclick = function () {
+            document.body.classList.toggle('dark-mode');
+        };
+    </script>
+
+</body>
+
+</html>
